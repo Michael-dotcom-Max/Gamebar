@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Space+Mono:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Animated Background */
+.app::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(255, 0, 102, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(0, 255, 136, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(0, 170, 255, 0.1) 0%,
+      transparent 50%
+    );
+  animation: pulse 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Header */
+header {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 255, 136, 0.3);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-family: "Righteous", cursive;
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #00ff88, #00aaff, #ff0066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  animation: glow 2s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #00ff88;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Main Container */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Game Selection Screen */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.game-card {
+  background: rgba(20, 20, 20, 0.8);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--game-color), transparent);
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.game-card:hover::before {
+  opacity: 1;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.game-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  color: var(--game-color);
+  filter: drop-shadow(0 0 10px var(--game-color));
+}
+
+.game-card h3 {
+  font-family: "Righteous", cursive;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--game-color);
+}
+
+.game-card p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.play-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: var(--game-color);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--game-color);
+}
+
+/* Game Container */
+.game-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(0, 255, 136, 0.2);
+}
+
+.game-header h3 {
+  font-family: "Righteous", cursive;
+  font-size: 1.8rem;
+  color: #00ff88;
+}
+
+.score {
+  font-size: 1.2rem;
+  color: #ffaa00;
+  font-weight: bold;
+}
+
+.back-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 100;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-5px);
+}
+
+/* Snake Game Styles */
+.game-canvas {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  background: #0a0a0a;
+}
+
+/* Memory Game Styles */
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.memory-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.memory-card.flipped {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: #00ff88;
+}
+
+/* Reaction Game Styles */
+.reaction-box {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 2rem 0;
+}
+
+.reaction-box.waiting {
+  background: rgba(170, 170, 170, 0.2);
+  border: 2px solid #aaa;
+}
+
+.reaction-box.ready {
+  background: rgba(255, 0, 102, 0.2);
+  border: 2px solid #ff0066;
+  animation: readyPulse 1s ease-in-out infinite;
+}
+
+@keyframes readyPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.reaction-box.go {
+  background: rgba(0, 255, 136, 0.3);
+  border: 2px solid #00ff88;
+  animation: goPulse 0.5s ease-in-out infinite;
+}
+
+@keyframes goPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px #00ff88;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00ff88;
+  }
+}
+
+.reaction-box.result {
+  background: rgba(0, 170, 255, 0.2);
+  border: 2px solid #00aaff;
+}
+
+.reaction-result {
+  font-size: 3rem;
+  color: #00aaff;
+  margin-bottom: 0.5rem;
+}
+
+.reaction-label {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Number Guesser Styles */
+.number-game {
+  text-align: center;
+}
+
+.game-message {
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ff88;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.game-input {
+  flex: 1;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  font-family: "Space Mono", monospace;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.game-input:focus {
+  outline: none;
+  border-color: #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+/* Common Button Styles */
+.game-btn {
+  padding: 1rem 2rem;
+  background: #00ff88;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.game-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ff88;
+}
+
+.game-over {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(0, 255, 136, 0.1);
+  border: 2px solid #00ff88;
+  border-radius: 12px;
+}
+
+.game-over h3 {
+  font-family: "Righteous", cursive;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00ff88;
+}
+
+.game-over p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #ffaa00;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 1rem;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .memory-grid {
+    gap: 0.5rem;
+  }
+
+  .memory-card {
+    font-size: 2rem;
+  }
+
+  .back-btn {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
