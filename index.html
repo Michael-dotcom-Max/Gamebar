@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#020408">
+  <title>PIXEL ARCADE — Ultra Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:ital,wght@0,200;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Background Layers -->
+  <div class="bg-scene" aria-hidden="true">
+    <canvas id="bgCanvas"></canvas>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-vignette"></div>
+    <div class="scanlines"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="logo-group">
+        <div class="logo-mark" aria-hidden="true">
+          <span class="logo-pixel"></span>
+          <span class="logo-pixel"></span>
+          <span class="logo-pixel"></span>
+          <span class="logo-pixel"></span>
+        </div>
+        <div class="logo-text-group">
+          <h1 class="logo-text">Pixel Arcade</h1>
+          <p class="logo-sub">Ultra Edition &mdash; 7 Games</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="global-score" id="totalScore" aria-live="polite">
+          <span class="score-label">TOTAL</span>
+          <span class="score-value" id="scoreValue">0</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-line"></div>
+  </header>
+
+  <!-- Main App -->
+  <main class="main" id="app" role="main"></main>
+
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Site footer">
+    <span>PIXEL ARCADE &copy; 2025</span>
+    <span class="footer-dot" aria-hidden="true"></span>
+    <span>Ultra Edition</span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
