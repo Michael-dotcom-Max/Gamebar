@@ -1,70 +1,198 @@
-# Getting Started with Create React App
+# 🎮 PIXEL ARCADE — Ultra Edition
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **A free, browser-based gaming website with 7 classic games — playable on any phone, tablet, or computer. No downloads, no accounts, no cost.**
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🕹️ The Games
 
-### `npm start`
+### The Home Screen
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+When you open the website, you'll see a beautiful dark arcade-style menu with **7 game cards**. Each card glows in its own colour and tells you what the game is about. Just tap or click **"Play Now"** on any card to jump straight in.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> 💡 **Notice the glowing dots in the background, the colour shimmer across the top, and the animated pixel logo** — these are all visual effects built into the site to give it that retro arcade feel.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Playing Snake
 
-### `npm run build`
+The classic Snake game — your green snake moves around the grid and you guide it to eat the red food dot. Every time it eats, it grows longer. If it hits a wall or itself, game over!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **On a computer:** Use the arrow keys on your keyboard (← → ↑ ↓)
+- **On a phone or tablet:** Use the on-screen arrow buttons (▲ ▼ ◀ ▶) that appear automatically
+- Your current score and best score are shown at the top right
+- Press **"Back to Arcade"** at the top left to return to the menu
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Memory Match
 
-### `npm run eject`
+A grid of 24 face-down cards (12 matching pairs). Flip two cards at a time — if they match, they stay revealed in green. If they don't match, they flip back. Your goal is to find all 12 pairs in as few moves as possible!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- The game tracks your **moves** (how many pairs you've flipped) and **pairs found** at the top
+- Matched pairs glow green  
+- Wrong guesses briefly flash pink to show the mismatch  
+- The game ends with a congratulations screen showing your final move count
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Reaction Time
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A pure reflex test. The box starts dark grey — wait for it to flash **bright green**, then click or tap as fast as you can!
 
-## Learn More
+- **Click too early** (before it turns green) = penalty and a "Too Early!" message
+- Your reaction time is shown in **milliseconds** (ms) — lower is better
+- You get a grade: 🏆 Superhuman (under 150ms) → ⚡ Elite → 💪 Great → 👍 Good → 😐 Average → 🐢 Slow
+- Your **best time** and **average time** are tracked across multiple rounds
+- Most people react in 200–300ms. Under 200ms is excellent!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Breakout
 
-### Code Splitting
+The classic brick-breaking arcade game. A ball bounces around the screen — use your paddle at the bottom to keep it in play and smash all the bricks!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **On a computer:** Move your mouse left and right over the game, or use ← → arrow keys
+- **On a phone:** Touch and drag across the screen, or use the on-screen ◀ ▶ buttons
+- Different coloured rows of bricks are worth the same points — clear them all to advance to the next level
+- You have **3 lives** (shown as ♥♥♥) — each time the ball falls off the bottom, you lose one
+- The game gets faster as you reach higher levels!
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### On Mobile (Phone / Tablet)
 
-### Making a Progressive Web App
+The website is **fully optimised for phones and tablets**. On a touchscreen:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Cards stack into a single column so they're easy to read and tap
+- Touch controls (arrow buttons, paddle buttons) appear automatically — you never need a keyboard
+- Everything resizes to fit your screen perfectly, from a small phone to a large tablet
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🕹️ All 7 Games Explained
 
-### Deployment
+| Game | Icon | What You Do | Difficulty |
+|------|------|-------------|------------|
+| **Snake** | 🐍 | Guide the snake to eat food without hitting walls or yourself | ⭐⭐ Medium |
+| **Memory Match** | 🧠 | Flip cards to find 12 matching pairs | ⭐⭐ Medium |
+| **Reaction Time** | ⚡ | Click the moment the box turns green | ⭐ Easy |
+| **Number Guesser** | 🎯 | Guess a hidden number between 1 and 100 (you get 10 tries) | ⭐ Easy |
+| **Whack-a-Mole** | 🔨 | Tap the moles before they disappear — 30 seconds on the clock! | ⭐⭐⭐ Hard |
+| **Speed Typing** | ⌨️ | Type a phrase as fast and accurately as possible | ⭐⭐ Medium |
+| **Breakout** | 🧱 | Keep the ball alive with your paddle and smash all the bricks | ⭐⭐⭐ Hard |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🌍 How to Open the Website
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You have **two files** that make up this website:
+
+```
+App.jsx       ← the games and interactive parts
+index.css     ← the visual design and styling
+```
+
+> **Not a developer?** Share these files with whoever is hosting the website for you. If you're already using a hosted version, just open it in any web browser — Chrome, Safari, Firefox, or Edge all work perfectly.
+
+### What devices does it work on?
+
+| Device | Works? | Controls |
+|--------|--------|----------|
+| 💻 Laptop / Desktop | ✅ Yes | Keyboard + Mouse |
+| 📱 iPhone / Android | ✅ Yes | Touch buttons auto-appear |
+| 📟 iPad / Tablet | ✅ Yes | Touch buttons auto-appear |
+| 📺 Smart TV browser | ✅ Yes | Remote or keyboard |
+
+---
+
+## ✨ Visual Features (What Makes It Look So Good)
+
+The website has several special visual effects running at all times:
+
+| Effect | What It Does |
+|--------|--------------|
+| **Floating particles** | Tiny glowing dots drift slowly across the background — like stars |
+| **Ambient orbs** | Soft green, blue, and pink glows pulse gently behind everything |
+| **Dot grid** | A subtle grid of dots gives depth, like classic arcade hardware |
+| **CRT scanlines** | Very faint horizontal lines mimic the look of old arcade monitors |
+| **Header shimmer** | The rainbow line under the logo slowly animates left to right |
+| **Card glow** | Each game card glows in its signature colour when you hover over it |
+| **Shimmer sweep** | A light sheen sweeps across a card when your cursor passes over it |
+| **Score bump** | The total score number bounces slightly every time you earn points |
+| **Neon glow** | Buttons and game elements glow with soft coloured light |
+
+---
+
+## 🏆 Scoring System
+
+Every game earns you points that add up in the **Total Score** pill at the top right of the screen. Here's how points are earned:
+
+| Game | How You Earn Points |
+|------|---------------------|
+| 🐍 Snake | +10 points per food eaten |
+| 🧠 Memory Match | +50 points per matching pair found |
+| ⚡ Reaction | Up to +500 points — faster = more points |
+| 🎯 Number Guesser | Up to +200 points — fewer guesses = more points |
+| 🔨 Whack-a-Mole | +10 points per mole hit |
+| ⌨️ Speed Typing | Points based on WPM × accuracy |
+| 🧱 Breakout | +10 per brick broken, +100 per level cleared |
+
+Your total carries across all games in a single session — try to beat your own high score!
+
+---
+
+## 🎨 Colour Guide
+
+Each game has its own signature colour throughout the interface:
+
+- 🟢 **Green** `#00ff88` — Snake
+- 🔴 **Pink** `#ff0066` — Memory Match
+- 🟡 **Amber** `#ffaa00` — Reaction Time
+- 🔵 **Blue** `#00aaff` — Number Guesser
+- 🟣 **Purple** `#aa00ff` — Whack-a-Mole
+- 🩵 **Cyan** `#00ffee` — Speed Typing
+- 🟠 **Orange** `#ff6600` — Breakout
+
+---
+
+## ❓ Common Questions
+
+**Q: Do I need to create an account?**  
+A: No. Just open the website and play immediately.
+
+**Q: Does it work offline?**  
+A: Once the page is loaded, all 7 games work completely offline — no internet needed.
+
+**Q: Can I play on my phone?**  
+A: Yes! Touch controls appear automatically on phones and tablets. No keyboard or mouse needed.
+
+**Q: Why does the page look dark?**  
+A: The dark theme is intentional — it's styled like a classic arcade machine and is much easier on the eyes for gaming.
+
+**Q: The score resets when I refresh the page — is that normal?**  
+A: Yes, your score is only kept for the current session. Refreshing the page starts fresh.
+
+**Q: Can multiple people play at the same time?**  
+A: Each person needs to open the website on their own device. It's a single-player experience.
+
+---
+
+## 🛠️ For Developers
+
+If you're setting this up, the project uses:
+
+- **React** (the JavaScript framework that powers the interactive games)
+- **CSS Custom Properties** (design tokens for the colour system)
+- **HTML5 Canvas** (for Snake and Breakout rendering)
+- **No external game libraries** — everything is built from scratch
+
+The two files go together:
+- `App.jsx` → place in your `src/` folder (or equivalent)
+- `index.css` → imported automatically via the `import "./index.css"` line in App.jsx
+
+Fonts are loaded from Google Fonts (Orbitron + Exo 2) — requires internet on first load.
+
+---
+
+*Built with React · Styled with pure CSS · Playable everywhere*
